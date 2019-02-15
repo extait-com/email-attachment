@@ -107,7 +107,8 @@ class Message implements \Magento\Framework\Mail\MailMessageInterface
         $attachmentPart->setContent($content)
             ->setType($fileType)
             ->setFileName($fileName)
-            ->setDisposition(Mime::DISPOSITION_ATTACHMENT);
+            ->setDisposition(Mime::DISPOSITION_ATTACHMENT)
+            ->setEncoding(Mime::ENCODING_BASE64);
 
         $this->parts[] = $attachmentPart;
 
